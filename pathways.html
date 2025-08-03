@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Career Pathways - CareerPathAI</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="pathways-styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="pathways.js" defer></script>
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header class="header">
+        <div class="nav-container">
+            <a href="index.html" class="logo">CareerPathAI</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="explore.html">Explore</a></li>
+                <li><a href="test.html">Test</a></li>
+                <li><a href="pathways.html" class="active">Pathways</a></li>
+                <li><a href="skills-gap.html">Skills Gap</a></li>
+                <li><a href="resources.html">Resources</a></li>
+                <li class="auth-buttons">
+                    <button id="login-button" class="nav-auth-btn">Login</button>
+                    <button id="signup-button" class="nav-auth-btn">Sign Up</button>
+                    <a href="user-profile.html" id="user-profile" class="user-profile"><i class="fas fa-user-circle"></i></a>
+                </li>
+            </ul>
+        </div>
+    </header>
+    
+    <!-- Auth Modal -->
+    <div class="auth-modal" id="auth-modal">
+        <div class="auth-container">
+            <div class="auth-header">
+                <div class="auth-tabs">
+                    <button id="login-tab" class="auth-tab active" data-target="#login-form">Login</button>
+                    <button id="signup-tab" class="auth-tab" data-target="#signup-form">Sign Up</button>
+                </div>
+                <button class="close-modal" id="close-auth-modal">&times;</button>
+            </div>
+            <div class="auth-content">
+                <!-- Login Form -->
+                <form id="login-form" class="auth-form active">
+                    <h3>Welcome Back</h3>
+                    <div class="form-group">
+                        <label for="login-email">Email</label>
+                        <input type="email" id="login-email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="login-password">Password</label>
+                        <input type="password" id="login-password" name="password" required>
+                    </div>
+                    <div class="remember-me">
+                        <label>
+                            <input type="checkbox" name="remember"> Remember me
+                        </label>
+                        <a href="#" class="forgot-password">Forgot Password?</a>
+                    </div>
+                    <button type="submit" class="auth-button">Login</button>
+                    
+                    <div class="social-login">
+                        <p>Or login with</p>
+                        <div class="social-buttons">
+                            <button type="button" class="social-btn google">
+                                <i class="fab fa-google"></i> Google
+                            </button>
+                            <button type="button" class="social-btn linkedin">
+                                <i class="fab fa-linkedin-in"></i> LinkedIn
+                            </button>
+                        </div>
+                    </div>
+                </form>
+                
+                <!-- Sign Up Form -->
+                <form id="signup-form" class="auth-form">
+                    <h3>Create an Account</h3>
+                    <div class="form-group">
+                        <label for="signup-name">Full Name</label>
+                        <input type="text" id="signup-name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="signup-email">Email</label>
+                        <input type="email" id="signup-email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="signup-password">Password</label>
+                        <input type="password" id="signup-password" name="password" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="signup-confirm">Confirm Password</label>
+                        <input type="password" id="signup-confirm" name="confirm_password" required>
+                    </div>
+                    <div class="terms">
+                        <label>
+                            <input type="checkbox" name="terms" required>
+                            I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>
+                        </label>
+                    </div>
+                    <button type="submit" class="auth-button">Sign Up</button>
+                    
+                    <div class="social-login">
+                        <p>Or sign up with</p>
+                        <div class="social-buttons">
+                            <button type="button" class="social-btn google">
+                                <i class="fab fa-google"></i> Google
+                            </button>
+                            <button type="button" class="social-btn linkedin">
+                                <i class="fab fa-linkedin-in"></i> LinkedIn
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Page Header -->
+    <div class="page-header">
+        <div class="container">
+            <h1>Career Pathways</h1>
+            <p>Explore personalized career recommendations based on your assessment results and discover the perfect career path that matches your skills, interests, and personality.</p>
+            <div class="header-cta">
+                <a href="test.html" class="btn-primary"><i class="fas fa-clipboard-check"></i> Take Assessment</a>
+                <a href="#pathways-section" class="btn-secondary"><i class="fas fa-search"></i> Browse Careers</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Career Pathways Section -->
+    <section id="pathways-section" class="pathways-section">
+        <div class="container">
+            <div class="section-intro">
+                <h2>Find Your Ideal Career Path</h2>
+                <p>Use the filters below to narrow down career options that match your preferences and skills profile.</p>
+            </div>
+            <div class="pathways-filters">
+                <div class="search-container">
+                    <i class="fas fa-search search-icon"></i>
+                    <input type="text" id="career-search" placeholder="Search for career titles, skills, or keywords...">
+                </div>
+                
+                <div class="filter-groups">
+                    <div class="filter-group">
+                        <label for="industry-filter">Industry</label>
+                        <select id="industry-filter">
+                            <option value="all">All Industries</option>
+                            <option value="tech">Technology</option>
+                            <option value="healthcare">Healthcare</option>
+                            <option value="finance">Finance</option>
+                            <option value="education">Education</option>
+                            <option value="creative">Creative Arts</option>
+                            <option value="business">Business</option>
+                            <option value="engineering">Engineering</option>
+                        </select>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <label for="match-filter">Match Percentage</label>
+                        <select id="match-filter">
+                            <option value="all">All Matches</option>
+                            <option value="90">90% and above</option>
+                            <option value="80">80% and above</option>
+                            <option value="70">70% and above</option>
+                            <option value="60">60% and above</option>
+                        </select>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <label for="growth-filter">Growth Potential</label>
+                        <select id="growth-filter">
+                            <option value="all">All Growth Rates</option>
+                            <option value="high">High Growth</option>
+                            <option value="medium">Medium Growth</option>
+                            <option value="low">Low Growth</option>
+                        </select>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <label for="salary-filter">Salary Range</label>
+                        <select id="salary-filter">
+                            <option value="all">All Salary Ranges</option>
+                            <option value="high">$100,000+</option>
+                            <option value="medium">$70,000 - $100,000</option>
+                            <option value="low">$40,000 - $70,000</option>
+                            <option value="entry">Below $40,000</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="filter-actions">
+                    <button id="apply-filters" class="filter-btn"><i class="fas fa-filter"></i> Apply Filters</button>
+                    <button id="reset-filters" class="reset-btn"><i class="fas fa-undo"></i> Reset</button>
+                </div>
+            </div>
+            
+            <div class="results-status">
+                <div id="loading-indicator" class="loading-indicator" style="display: none;">
+                    <div class="spinner"></div>
+                    <p>Finding career matches...</p>
+                </div>
+                <div id="no-results" class="no-results" style="display: none;">
+                    <i class="fas fa-search"></i>
+                    <h3>No matching careers found</h3>
+                    <p>Try adjusting your filters or search criteria</p>
+                    <button id="reset-search" class="btn-secondary"><i class="fas fa-undo"></i> Reset Filters</button>
+                </div>
+            </div>
+            
+            <div class="pathways-results">
+                <!-- Career Path Card 1 -->
+                <div class="career-path-card">
+                    <div class="match-indicator">
+                        <div class="match-circle">
+                            <span class="match-percentage">95%</span>
+                        </div>
+                        <span class="match-label">Match</span>
+                    </div>
+                    
+                    <div class="career-info">
+                        <div class="career-header">
+                            <h3>Data Scientist</h3>
+                            <div class="career-badge high">High Demand</div>
+                        </div>
+                        <div class="career-meta">
+                            <span class="industry"><i class="fas fa-building"></i> Technology</span>
+                            <span class="salary"><i class="fas fa-money-bill-wave"></i> $95,000 - $145,000</span>
+                            <span class="growth high"><i class="fas fa-chart-line"></i> High Growth</span>
+                            <span class="education"><i class="fas fa-graduation-cap"></i> Master's Degree</span>
+                        </div>
+                        <p class="career-description">Data scientists analyze and interpret complex data to help organizations make better decisions. They use machine learning, statistical analysis, and data visualization to extract insights from large datasets.</p>
+                        <div class="key-skills">
+                            <h4>Key Skills</h4>
+                            <div class="skill-tags">
+                                <span class="skill-tag">Python</span>
+                                <span class="skill-tag">Machine Learning</span>
+                                <span class="skill-tag">SQL</span>
+                                <span class="skill-tag">Data Visualization</span>
+                                <span class="skill-tag">Statistics</span>
+                            </div>
+                        </div>
+                        <div class="action-buttons">
+                            <button class="view-details-btn"><i class="fas fa-info-circle"></i> View Details</button>
+                            <button class="save-path-btn"><i class="far fa-bookmark"></i> Save</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Career Path Card 2 -->
+                <div class="career-path-card">
+                    <div class="match-indicator">
+                        <div class="match-circle">
+                            <span class="match-percentage">88%</span>
+                        </div>
+                        <span class="match-label">Match</span>
+                    </div>
+                    
+                    <div class="career-info">
+                        <div class="career-header">
+                            <h3>Machine Learning Engineer</h3>
+                            <div class="career-badge high">High Demand</div>
+                        </div>
+                        <div class="career-meta">
+                            <span class="industry"><i class="fas fa-building"></i> Technology</span>
+                            <span class="salary"><i class="fas fa-money-bill-wave"></i> $110,000 - $160,000</span>
+                            <span class="growth high"><i class="fas fa-chart-line"></i> High Growth</span>
+                            <span class="education"><i class="fas fa-graduation-cap"></i> Master's Degree</span>
+                        </div>
+                        <p class="career-description">Machine Learning Engineers design and implement machine learning models to solve complex problems. They work on the full ML pipeline from data collection to model deployment.</p>
+                        <div class="key-skills">
+                            <h4>Key Skills</h4>
+                            <div class="skill-tags">
+                                <span class="skill-tag">Python</span>
+                                <span class="skill-tag">TensorFlow</span>
+                                <span class="skill-tag">Deep Learning</span>
+                                <span class="skill-tag">Computer Vision</span>
+                                <span class="skill-tag">NLP</span>
+                            </div>
+                        </div>
+                        <div class="action-buttons">
+                            <button class="view-details-btn"><i class="fas fa-info-circle"></i> View Details</button>
+                            <button class="save-path-btn"><i class="far fa-bookmark"></i> Save</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Career Path Card 3 -->
+                <div class="career-path-card">
+                    <div class="match-indicator">
+                        <div class="match-circle">
+                            <span class="match-percentage">82%</span>
+                        </div>
+                        <span class="match-label">Match</span>
+                    </div>
+                    
+                    <div class="career-info">
+                        <div class="career-header">
+                            <h3>Data Engineer</h3>
+                            <div class="career-badge medium">Medium Demand</div>
+                        </div>
+                        <div class="career-meta">
+                            <span class="industry"><i class="fas fa-building"></i> Technology</span>
+                            <span class="salary"><i class="fas fa-money-bill-wave"></i> $90,000 - $140,000</span>
+                            <span class="growth medium"><i class="fas fa-chart-line"></i> Medium Growth</span>
+                            <span class="education"><i class="fas fa-graduation-cap"></i> Bachelor's Degree</span>
+                        </div>
+                        <p class="career-description">Data Engineers design, build, and maintain data pipelines and infrastructure. They ensure data is accessible, reliable, and optimized for analysis by data scientists and analysts.</p>
+                        <div class="key-skills">
+                            <h4>Key Skills</h4>
+                            <div class="skill-tags">
+                                <span class="skill-tag">SQL</span>
+                                <span class="skill-tag">Python</span>
+                                <span class="skill-tag">Hadoop</span>
+                                <span class="skill-tag">Spark</span>
+                                <span class="skill-tag">ETL</span>
+                            </div>
+                        </div>
+                        <div class="action-buttons">
+                            <button class="view-details-btn"><i class="fas fa-info-circle"></i> View Details</button>
+                            <button class="save-path-btn"><i class="far fa-bookmark"></i> Save</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Career Path Card 4 -->
+                <div class="career-path-card">
+                    <div class="match-indicator">
+                        <div class="match-circle">
+                            <span class="match-percentage">78%</span>
+                        </div>
+                        <span class="match-label">Match</span>
+                    </div>
+                    
+                    <div class="career-info">
+                        <div class="career-header">
+                            <h3>AI Research Scientist</h3>
+                            <div class="career-badge high">High Demand</div>
+                        </div>
+                        <div class="career-meta">
+                            <span class="industry"><i class="fas fa-building"></i> Technology</span>
+                            <span class="salary"><i class="fas fa-money-bill-wave"></i> $120,000 - $180,000</span>
+                            <span class="growth high"><i class="fas fa-chart-line"></i> High Growth</span>
+                            <span class="education"><i class="fas fa-graduation-cap"></i> PhD Preferred</span>
+                        </div>
+                        <p class="career-description">AI Research Scientists advance the field of artificial intelligence by developing new algorithms and approaches. They work on cutting-edge problems in machine learning, computer vision, and natural language processing.</p>
+                        <div class="key-skills">
+                            <h4>Key Skills</h4>
+                            <div class="skill-tags">
+                                <span class="skill-tag">Deep Learning</span>
+                                <span class="skill-tag">Research</span>
+                                <span class="skill-tag">Python</span>
+                                <span class="skill-tag">Mathematics</span>
+                                <span class="skill-tag">Publications</span>
+                            </div>
+                        </div>
+                        <div class="action-buttons">
+                            <button class="view-details-btn"><i class="fas fa-info-circle"></i> View Details</button>
+                            <button class="save-path-btn"><i class="far fa-bookmark"></i> Save</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="pagination">
+                <button class="pagination-btn"><i class="fas fa-chevron-left"></i></button>
+                <button class="pagination-btn active">1</button>
+                <button class="pagination-btn">2</button>
+                <button class="pagination-btn">3</button>
+                <button class="pagination-btn"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section about">
+                <h4>About CareerPathAI</h4>
+                <p>CareerPathAI is an AI-powered career guidance platform that helps students and professionals discover personalized career pathways based on their unique profile.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-section links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="explore.html">Explore</a></li>
+                    <li><a href="test.html">Test</a></li>
+                    <li><a href="pathways.html">Career Pathways</a></li>
+                    <li><a href="skills-gap.html">Skills Gap</a></li>
+                    <li><a href="resources.html">Resources</a></li>
+                    <li><a href="#">FAQ</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section contact">
+                <h4>Contact Us</h4>
+                <p><i class="fas fa-map-marker-alt"></i> 123 Innovation Drive, Tech City, TC 12345</p>
+                <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
+                <p><i class="fas fa-envelope"></i> info@careerpathAI.com</p>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2023 CareerPathAI. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

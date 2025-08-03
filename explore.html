@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore Booming Domains - CareerPathAI</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="explore-styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header class="header">
+        <div class="nav-container">
+            <a href="index.html" class="logo">CareerPathAI</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="explore.html" class="active">Explore</a></li>
+                <li><a href="test.html">Test</a></li>
+                <li><a href="pathways.html">Pathways</a></li>
+                <li><a href="skills-gap.html">Skills Gap</a></li>
+                <li><a href="resources.html">Resources</a></li>
+                <li class="auth-buttons">
+                    <button id="login-button" class="nav-auth-btn">Login</button>
+                    <button id="signup-button" class="nav-auth-btn">Sign Up</button>
+                    <a href="user-profile.html" id="user-profile" class="user-profile"><i class="fas fa-user-circle"></i></a>
+                </li>
+            </ul>
+        </div>
+    </header>
+    
+    <!-- Auth Modal -->
+    <div class="auth-modal" id="auth-modal">
+        <div class="auth-container">
+            <div class="auth-header">
+                <div class="auth-tabs">
+                    <button id="login-tab" class="auth-tab active" data-target="#login-form">Login</button>
+                    <button id="signup-tab" class="auth-tab" data-target="#signup-form">Sign Up</button>
+                </div>
+                <button class="close-modal" id="close-auth-modal">&times;</button>
+            </div>
+            <div class="auth-content">
+                <!-- Login Form -->
+                <form id="login-form" class="auth-form active">
+                    <h3>Welcome Back</h3>
+                    <div class="form-group">
+                        <label for="login-email">Email</label>
+                        <input type="email" id="login-email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="login-password">Password</label>
+                        <input type="password" id="login-password" name="password" required>
+                    </div>
+                    <div class="form-group form-actions">
+                        <button type="submit" class="btn-primary">Login</button>
+                        <a href="#" class="forgot-password">Forgot Password?</a>
+                    </div>
+                </form>
+                
+                <!-- Sign Up Form -->
+                <form id="signup-form" class="auth-form">
+                    <h3>Create an Account</h3>
+                    <div class="form-group">
+                        <label for="signup-name">Full Name</label>
+                        <input type="text" id="signup-name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="signup-email">Email</label>
+                        <input type="email" id="signup-email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="signup-password">Password</label>
+                        <input type="password" id="signup-password" name="password" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="signup-confirm-password">Confirm Password</label>
+                        <input type="password" id="signup-confirm-password" name="confirm-password" required>
+                    </div>
+                    <div class="form-group form-actions">
+                        <button type="submit" class="btn-primary">Sign Up</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Page Header -->
+    <div class="page-header">
+        <div class="container">
+            <h1>Explore Booming Domains</h1>
+            <p>Discover the latest trends in high-growth career fields with real-time data on salary, growth, and employment rates</p>
+        </div>
+    </div>
+
+    <!-- Explore Section -->
+    <section class="explore-section">
+        <div class="container">
+            <div class="domain-filters">
+                <h2>Filter by Industry</h2>
+                <div class="search-container">
+                    <input type="text" id="domain-search" placeholder="Search domains..." class="search-input">
+                    <i class="fas fa-search search-icon"></i>
+                </div>
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-filter="all">All Industries</button>
+                    <button class="filter-btn" data-filter="tech">Technology</button>
+                    <button class="filter-btn" data-filter="healthcare">Healthcare</button>
+                    <button class="filter-btn" data-filter="finance">Finance</button>
+                    <button class="filter-btn" data-filter="green">Green Energy</button>
+                    <button class="filter-btn" data-filter="ai">AI & Data Science</button>
+                    <button class="filter-btn" data-filter="cyber">Cybersecurity</button>
+                    <button class="filter-btn" data-filter="blockchain">Blockchain</button>
+                </div>
+            </div>
+
+            <div class="domains-grid">
+                <!-- Technology Domain Cards -->
+                <div class="domain-card" data-category="tech">
+                    <div class="domain-header">
+                        <h3>Software Development</h3>
+                        <span class="trend-badge hot">Hot</span>
+                    </div>
+                    <div class="domain-stats">
+                        <div class="stat">
+                            <i class="fas fa-money-bill-wave"></i>
+                            <div class="stat-info">
+                                <span class="stat-label">Avg. Salary</span>
+                                <span class="stat-value" id="software-salary">$110,140</span>
+                                <span class="api-placeholder">(API Data)</span>
+                            </div>
+                        </div>
+                        <div class="stat">
+                            <i class="fas fa-chart-line"></i>
+                            <div class="stat-info">
+                                <span class="stat-label">Growth Rate</span>
+                                <span class="stat-value" id="software-growth">22%</span>
+                                <span class="api-placeholder">(API Data)</span>
+                            </div>
+                        </div>
+                        <div class="stat">
+                            <i class="fas fa-user-tie"></i>
+                            <div class="stat-info">
+                                <span class="stat-label">Employment</span>
+                                <span class="stat-value" id="software-employment">1.8M jobs</span>
+                                <span class="api-placeholder">(API Data)</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="domain-description">
+                        <p>Software development continues to be one of the fastest-growing fields with high demand for skilled professionals across various specializations including web, mobile, and cloud development.</p>
+                    </div>
+                    <div class="domain-actions">
+                        <button class="btn-secondary">View Pathways</button>
+                        <button class="btn-outline">Skills Required</button>
+                    </div>
+                </div>
+
+                <!-- AI & Data Science Domain Card -->
+                <div class="domain-card" data-category="ai">
+                    <div class="domain-header">
+                        <h3>Artificial Intelligence</h3>
+                        <span class="trend-badge hot">Hot</span>
+                    </div>
+                    <div class="domain-stats">
+                        <div class="stat">
+                            <i class="fas fa-money-bill-wave"></i>
+                            <div class="stat-info">
+                                <span class="stat-label">Avg. Salary</span>
+                                <span class="stat-value" id="ai-salary">$135,750</span>
+                                <span class="api-placeholder">(API Data)</span>
+                            </div>
+                        </div>
+                        <div class="stat">
+                            <i class="fas fa-chart-line"></i>
+                            <div class="stat-info">
+                                <span class="stat-label">Growth Rate</span>
+                                <span class="stat-value" id="ai-growth">31%</span>
+                                <span class="api-placeholder">(API Data)</span>
+                            </div>
+                        </div>
+                        <div class="stat">
+                            <i class="fas fa-user-tie"></i>
+                            <div class="stat-info">
+                                <span class="stat-label">Employment</span>
+                                <span class="stat-value" id="ai-employment">420K jobs</span>
+                                <span class="api-placeholder">(API Data)</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="domain-description">
+                        <p>Artificial Intelligence and Machine Learning specialists are in extremely high demand as organizations across all industries implement AI solutions to improve efficiency and innovation.</p>
+                    </div>
+                    <div class="domain-actions">
+                        <button class="btn-secondary">View Pathways</button>
+                        <button class="btn-outline">Skills Required</button>
+                    </div>
+                </div>
+
+                <!-- Cybersecurity Domain Card -->
+                <div class="domain-card" data-category="cyber">
+                    <div class="domain-header">
+                        <h3>Cybersecurity</h3>
+                        <span class="trend-badge hot">Hot</span>
+                    </div>
+                    <div class="domain-stats">
+                        <div class="stat">
+                            <i class="fas fa-money-bill-wave"></i>
+                            <div class="stat-info">
+                                <span class="stat-label">Avg. Salary</span>
+                                <span class="stat-value" id="cyber-salary">$120,360</span>
+                                <span class="api-placeholder">(API Data)</span>
+                            </div>
+                        </div>
+                        <div class="stat">
+                            <i class="fas fa-chart-line"></i>
+                            <div class="stat-info">
+                                <span class="stat-label">Growth Rate</span>
+                                <span class="stat-value" id="cyber-growth">33%</span>
+                                <span class="api-placeholder">(API Data)</span>
+                            </div>
+                        </div>
+                        <div class="stat">
+                            <i class="fas fa-user-tie"></i>
+                            <div class="stat-info">
+                                <span class="stat-label">Employment</span>
+                                <span class="stat-value" id="cyber-employment">580K jobs</span>
+                                <span class="api-placeholder">(API Data)</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="domain-description">
+                        <p>Cybersecurity professionals protect organizations from digital threats and attacks, with demand skyrocketing as cyber threats become more sophisticated and frequent.</p>
+                    </div>
+                    <div class="domain-actions">
+                        <button class="btn-secondary">View Pathways</button>
+                        <button class="btn-outline">Skills Required</button>
+                    </div>
+                </div>
+
+                <!-- Blockchain Domain Card -->
+                <div class="domain-card" data-category="blockchain">
+                    <div class="domain-header">
+                        <h3>Blockchain Development</h3>
+                        <span class="trend-badge rising">Rising</span>
+                    </div>
+                    <div class="domain-stats">
+                        <div class="stat">
+                            <i class="fas fa-money-bill-wave"></i>
+                            <div class="stat-info">
+                                <span class="stat-label">Avg. Salary</span>
+                                <span class="stat-value" id="blockchain-salary">$145,200</span>
+                                <span class="api-placeholder">(API Data)</span>
+                            </div>
+                        </div>
+                        <div class="stat">
+                            <i class="fas fa-chart-line"></i>
+                            <div class="stat-info">
+                                <span class="stat-label">Growth Rate</span>
+                                <span class="stat-value" id="blockchain-growth">28%</span>
+                                <span class="api-placeholder">(API Data)</span>
+                            </div>
+                        </div>
+                        <div class="stat">
+                            <i class="fas fa-user-tie"></i>
+                            <div class="stat-info">
+                                <span class="stat-label">Employment</span>
+                                <span class="stat-value" id="blockchain-employment">180K jobs</span>
+                                <span class="api-placeholder">(API Data)</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="domain-description">
+                        <p>Blockchain technology is revolutionizing industries beyond cryptocurrency, creating demand for developers who can build decentralized applications and smart contracts.</p>
+                    </div>
+                    <div class="domain-actions">
+                        <button class="btn-secondary">View Pathways</button>
+                        <button class="btn-outline">Skills Required</button>
+                    </div>
+                </div>
+
+                <!-- Healthcare Domain Card -->
+                <div class="domain-card" data-category="healthcare">
+                    <div class="domain-header">
+                        <h3>Healthcare Technology</h3>
+                        <span class="trend-badge hot">Hot</span>
+                    </div>
+                    <div class="domain-stats">
+                        <div class="stat">
+                            <i class="fas fa-money-bill-wave"></i>
+                            <div class="stat-info">
+                                <span class="stat-label">Avg. Salary</span>
+                                <span class="stat-value" id="healthcare-salary">$104,280</span>
+                                <span class="api-placeholder">(API Data)</span>
+                            </div>
+                        </div>
+                        <div class="stat">
+                            <i class="fas fa-chart-line"></i>
+                            <div class="stat-info">
+                                <span class="stat-label">Growth Rate</span>
+                                <span class="stat-value" id="healthcare-growth">18%</span>
+                                <span class="api-placeholder">(API Data)</span>
+                            </div>
+                        </div>
+                        <div class="stat">
+                            <i class="fas fa-user-tie"></i>
+                            <div class="stat-info">
+                                <span class="stat-label">Employment</span>
+                                <span class="stat-value" id="healthcare-employment">900K jobs</span>
+                                <span class="api-placeholder">(API Data)</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="domain-description">
+                        <p>Healthcare technology combines medical knowledge with technical skills to develop innovative solutions for patient care, medical research, and healthcare administration.</p>
+                    </div>
+                    <div class="domain-actions">
+                        <button class="btn-secondary">View Pathways</button>
+                        <button class="btn-outline">Skills Required</button>
+                    </div>
+                </div>
+
+                <!-- Finance Domain Card -->
+                <div class="domain-card" data-category="finance">
+                    <div class="domain-header">
+                        <h3>Financial Technology</h3>
+                        <span class="trend-badge rising">Rising</span>
+                    </div>
+                    <div class="domain-stats">
+                        <div class="stat">
+                            <i class="fas fa-money-bill-wave"></i>
+                            <div class="stat-info">
+                                <span class="stat-label">Avg. Salary</span>
+                                <span class="stat-value" id="fintech-salary">$125,600</span>
+                                <span class="api-placeholder">(API Data)</span>
+                            </div>
+                        </div>
+                        <div class="stat">
+                            <i class="fas fa-chart-line"></i>
+                            <div class="stat-info">
+                                <span class="stat-label">Growth Rate</span>
+                                <span class="stat-value" id="fintech-growth">16%</span>
+                                <span class="api-placeholder">(API Data)</span>
+                            </div>
+                        </div>
+                        <div class="stat">
+                            <i class="fas fa-user-tie"></i>
+                            <div class="stat-info">
+                                <span class="stat-label">Employment</span>
+                                <span class="stat-value" id="fintech-employment">750K jobs</span>
+                                <span class="api-placeholder">(API Data)</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="domain-description">
+                        <p>Financial Technology (FinTech) is revolutionizing banking, investments, and financial services with innovative digital solutions that require specialized technical and financial expertise.</p>
+                    </div>
+                    <div class="domain-actions">
+                        <button class="btn-secondary">View Pathways</button>
+                        <button class="btn-outline">Skills Required</button>
+                    </div>
+                </div>
+
+                <!-- Green Energy Domain Card -->
+                <div class="domain-card" data-category="green">
+                    <div class="domain-header">
+                        <h3>Renewable Energy</h3>
+                        <span class="trend-badge rising">Rising</span>
+                    </div>
+                    <div class="domain-stats">
+                        <div class="stat">
+                            <i class="fas fa-money-bill-wave"></i>
+                            <div class="stat-info">
+                                <span class="stat-label">Avg. Salary</span>
+                                <span class="stat-value" id="energy-salary">$96,820</span>
+                                <span class="api-placeholder">(API Data)</span>
+                            </div>
+                        </div>
+                        <div class="stat">
+                            <i class="fas fa-chart-line"></i>
+                            <div class="stat-info">
+                                <span class="stat-label">Growth Rate</span>
+                                <span class="stat-value" id="energy-growth">14%</span>
+                                <span class="api-placeholder">(API Data)</span>
+                            </div>
+                        </div>
+                        <div class="stat">
+                            <i class="fas fa-user-tie"></i>
+                            <div class="stat-info">
+                                <span class="stat-label">Employment</span>
+                                <span class="stat-value" id="energy-employment">650K jobs</span>
+                                <span class="api-placeholder">(API Data)</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="domain-description">
+                        <p>The renewable energy sector is experiencing significant growth as the world transitions to sustainable energy sources, creating demand for engineers, technicians, and project managers.</p>
+                    </div>
+                    <div class="domain-actions">
+                        <button class="btn-secondary">View Pathways</button>
+                        <button class="btn-outline">Skills Required</button>
+                    </div>
+                </div>
+
+                <!-- Cloud Computing Domain Card -->
+                <div class="domain-card" data-category="tech">
+                    <div class="domain-header">
+                        <h3>Cloud Computing</h3>
+                        <span class="trend-badge hot">Hot</span>
+                    </div>
+                    <div class="domain-stats">
+                        <div class="stat">
+                            <i class="fas fa-money-bill-wave"></i>
+                            <div class="stat-info">
+                                <span class="stat-label">Avg. Salary</span>
+                                <span class="stat-value" id="cloud-salary">$118,750</span>
+                                <span class="api-placeholder">(API Data)</span>
+                            </div>
+                        </div>
+                        <div class="stat">
+                            <i class="fas fa-chart-line"></i>
+                            <div class="stat-info">
+                                <span class="stat-label">Growth Rate</span>
+                                <span class="stat-value" id="cloud-growth">25%</span>
+                                <span class="api-placeholder">(API Data)</span>
+                            </div>
+                        </div>
+                        <div class="stat">
+                            <i class="fas fa-user-tie"></i>
+                            <div class="stat-info">
+                                <span class="stat-label">Employment</span>
+                                <span class="stat-value" id="cloud-employment">1.2M jobs</span>
+                                <span class="api-placeholder">(API Data)</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="domain-description">
+                        <p>Cloud computing specialists design, implement, and manage cloud infrastructure and services, with expertise in AWS, Azure, and Google Cloud platforms.</p>
+                    </div>
+                    <div class="domain-actions">
+                        <button class="btn-secondary">View Pathways</button>
+                        <button class="btn-outline">Skills Required</button>
+                    </div>
+                </div>
+
+                <!-- Data Science Domain Card -->
+                <div class="domain-card" data-category="ai">
+                    <div class="domain-header">
+                        <h3>Data Science</h3>
+                        <span class="trend-badge hot">Hot</span>
+                    </div>
+                    <div class="domain-stats">
+                        <div class="stat">
+                            <i class="fas fa-money-bill-wave"></i>
+                            <div class="stat-info">
+                                <span class="stat-label">Avg. Salary</span>
+                                <span class="stat-value" id="data-salary">$130,500</span>
+                                <span class="api-placeholder">(API Data)</span>
+                            </div>
+                        </div>
+                        <div class="stat">
+                            <i class="fas fa-chart-line"></i>
+                            <div class="stat-info">
+                                <span class="stat-label">Growth Rate</span>
+                                <span class="stat-value" id="data-growth">27%</span>
+                                <span class="api-placeholder">(API Data)</span>
+                            </div>
+                        </div>
+                        <div class="stat">
+                            <i class="fas fa-user-tie"></i>
+                            <div class="stat-info">
+                                <span class="stat-label">Employment</span>
+                                <span class="stat-value" id="data-employment">380K jobs</span>
+                                <span class="api-placeholder">(API Data)</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="domain-description">
+                        <p>Data scientists analyze complex data sets to help organizations make informed decisions, combining statistical analysis, machine learning, and business acumen.</p>
+                    </div>
+                    <div class="domain-actions">
+                        <button class="btn-secondary">View Pathways</button>
+                        <button class="btn-outline">Skills Required</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="api-integration-note">
+                <div class="note-content">
+                    <i class="fas fa-info-circle"></i>
+                    <p>All statistics shown are placeholder values. This page is designed to integrate with real-time API data for accurate salary, growth, and employment information.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- API Integration Section -->
+    <section class="api-section">
+        <div class="container">
+            <h2>Real-Time Career Data</h2>
+            <p class="section-description">This page is designed to connect with external APIs to provide the most current information on career trends, salary ranges, and job market growth. When implemented, the data will update automatically to reflect the latest industry statistics.</p>
+            
+            <div class="api-features">
+                <div class="feature">
+                    <i class="fas fa-sync-alt"></i>
+                    <h3>Live Updates</h3>
+                    <p>Data refreshes automatically to provide the most current information available</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-globe"></i>
+                    <h3>Regional Data</h3>
+                    <p>Filter statistics by country, region, or city to get localized career information</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-chart-bar"></i>
+                    <h3>Trend Analysis</h3>
+                    <p>View historical data and projections to understand career trajectory</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2>CareerPathAI</h2>
+                    <p>AI-Enhanced Career Guidance System</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h3>Navigation</h3>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="explore.html">Explore</a></li>
+                            <li><a href="test.html">Test</a></li>
+                            <li><a href="pathways.html">Pathways</a></li>
+                            <li><a href="skills-gap.html">Skills Gap</a></li>
+                            <li><a href="resources.html">Resources</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3>Legal</h3>
+                        <ul>
+                            <li><a href="#">Terms of Service</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Cookie Policy</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3>Contact</h3>
+                        <ul>
+                            <li><a href="#">Support</a></li>
+                            <li><a href="#">Feedback</a></li>
+                            <li><a href="#">Partnerships</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 CareerPathAI. All rights reserved.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Domain filtering and search functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const domainCards = document.querySelectorAll('.domain-card');
+            const searchInput = document.getElementById('domain-search');
+            
+            // Filter functionality
+            filterButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    // Remove active class from all buttons
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    
+                    // Add active class to clicked button
+                    button.classList.add('active');
+                    
+                    const filter = button.getAttribute('data-filter');
+                    applyFilters(filter, searchInput.value);
+                });
+            });
+            
+            // Search functionality
+            searchInput.addEventListener('input', (e) => {
+                const searchTerm = e.target.value.toLowerCase();
+                const activeFilter = document.querySelector('.filter-btn.active').getAttribute('data-filter');
+                applyFilters(activeFilter, searchTerm);
+            });
+            
+            // Combined filter and search function
+            function applyFilters(categoryFilter, searchTerm) {
+                domainCards.forEach(card => {
+                    const category = card.getAttribute('data-category');
+                    const title = card.querySelector('h3').textContent.toLowerCase();
+                    const description = card.querySelector('.domain-description p').textContent.toLowerCase();
+                    
+                    const matchesCategory = categoryFilter === 'all' || category === categoryFilter;
+                    const matchesSearch = searchTerm === '' || 
+                                        title.includes(searchTerm) || 
+                                        description.includes(searchTerm);
+                    
+                    if (matchesCategory && matchesSearch) {
+                        card.style.display = 'block';
+                        card.style.animation = 'fadeInUp 0.5s ease-out';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+                
+                // Show/hide no results message
+                const visibleCards = document.querySelectorAll('.domain-card[style*="block"]');
+                let noResultsMsg = document.querySelector('.no-results');
+                
+                if (visibleCards.length === 0) {
+                    if (!noResultsMsg) {
+                        noResultsMsg = document.createElement('div');
+                        noResultsMsg.className = 'no-results';
+                        noResultsMsg.innerHTML = `
+                            <div class="no-results-content">
+                                <i class="fas fa-search"></i>
+                                <h3>No domains found</h3>
+                                <p>Try adjusting your search terms or filters</p>
+                            </div>
+                        `;
+                        document.querySelector('.domains-grid').appendChild(noResultsMsg);
+                    }
+                } else if (noResultsMsg) {
+                    noResultsMsg.remove();
+                }
+            }
+            
+            // API Integration Structure
+            class CareerDataAPI {
+                constructor() {
+                    this.baseURL = 'https://api.example.com/career-data'; // Replace with your API endpoint
+                    this.apiKey = ''; // Add your API key here
+                }
+                
+                async fetchDomainData(domain) {
+                    try {
+                        const response = await fetch(`${this.baseURL}/domains/${domain}`, {
+                            headers: {
+                                'Authorization': `Bearer ${this.apiKey}`,
+                                'Content-Type': 'application/json'
+                            }
+                        });
+                        
+                        if (!response.ok) {
+                            throw new Error(`HTTP error! status: ${response.status}`);
+                        }
+                        
+                        const data = await response.json();
+                        return data;
+                    } catch (error) {
+                        console.error('Error fetching domain data:', error);
+                        return null;
+                    }
+                }
+                
+                async updateDomainStats(domainId, data) {
+                    const salaryElement = document.getElementById(`${domainId}-salary`);
+                    const growthElement = document.getElementById(`${domainId}-growth`);
+                    const employmentElement = document.getElementById(`${domainId}-employment`);
+                    
+                    if (salaryElement && data.salary) {
+                        salaryElement.textContent = this.formatSalary(data.salary);
+                        salaryElement.style.color = '#28a745';
+                    }
+                    
+                    if (growthElement && data.growthRate) {
+                        growthElement.textContent = `${data.growthRate}%`;
+                        growthElement.style.color = data.growthRate > 20 ? '#28a745' : '#ffc107';
+                    }
+                    
+                    if (employmentElement && data.employment) {
+                        employmentElement.textContent = this.formatEmployment(data.employment);
+                        employmentElement.style.color = '#4a6bff';
+                    }
+                }
+                
+                formatSalary(salary) {
+                    return new Intl.NumberFormat('en-US', {
+                        style: 'currency',
+                        currency: 'USD',
+                        minimumFractionDigits: 0,
+                        maximumFractionDigits: 0
+                    }).format(salary);
+                }
+                
+                formatEmployment(count) {
+                    if (count >= 1000000) {
+                        return `${(count / 1000000).toFixed(1)}M jobs`;
+                    } else if (count >= 1000) {
+                        return `${(count / 1000).toFixed(0)}K jobs`;
+                    }
+                    return `${count} jobs`;
+                }
+            }
+            
+            // Initialize API and fetch data
+            const careerAPI = new CareerDataAPI();
+            
+            // Simulate API data updates (replace with actual API calls)
+            function simulateAPIUpdates() {
+                const domains = [
+                    'software', 'ai', 'cyber', 'blockchain', 'healthcare', 
+                    'fintech', 'energy', 'cloud', 'data'
+                ];
+                
+                domains.forEach(domain => {
+                    setTimeout(() => {
+                        // Simulate real-time data updates
+                        const mockData = {
+                            salary: Math.floor(Math.random() * 50000) + 80000,
+                            growthRate: Math.floor(Math.random() * 30) + 10,
+                            employment: Math.floor(Math.random() * 1000000) + 100000
+                        };
+                        
+                        careerAPI.updateDomainStats(domain, mockData);
+                    }, Math.random() * 3000); // Random delay for realistic effect
+                });
+            }
+            
+            // Start API simulation
+            simulateAPIUpdates();
+            
+            // Add loading states for API calls
+            function showLoadingState(domainId) {
+                const elements = [
+                    document.getElementById(`${domainId}-salary`),
+                    document.getElementById(`${domainId}-growth`),
+                    document.getElementById(`${domainId}-employment`)
+                ];
+                
+                elements.forEach(element => {
+                    if (element) {
+                        element.innerHTML = '<i class="fas fa-spinner fa-spin"></i>';
+                    }
+                });
+            }
+            
+            // Add click handlers for domain actions
+            document.querySelectorAll('.btn-secondary').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    const card = e.target.closest('.domain-card');
+                    const domainName = card.querySelector('h3').textContent;
+                    // Navigate to pathways page with domain parameter
+                    window.location.href = `pathways.html?domain=${encodeURIComponent(domainName)}`;
+                });
+            });
+            
+            document.querySelectorAll('.btn-outline').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    const card = e.target.closest('.domain-card');
+                    const domainName = card.querySelector('h3').textContent;
+                    // Show skills modal or navigate to skills page
+                    alert(`Skills required for ${domainName} will be displayed here.`);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
