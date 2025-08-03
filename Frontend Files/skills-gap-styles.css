@@ -1,0 +1,252 @@
+/* Skills Gap Styles */
+
+:root {
+    --primary-color: #4a6cf7;
+    --primary-dark: #3a56d4;
+    --secondary-color: #6c757d;
+    --success-color: #28a745;
+    --warning-color: #ffc107;
+    --danger-color: #dc3545;
+    --info-color: #17a2b8;
+    --text-color: #333;
+    --text-light: #6c757d;
+    --bg-color: #f8f9fa;
+    --bg-light: #ffffff;
+    --border-color: #dee2e6;
+    --border-radius: 8px;
+    --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+}
+
+/* Page Header */
+.page-header {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 100px 0 60px;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.page-header h1 {
+    font-size: 2.8rem;
+    margin-bottom: 15px;
+}
+
+.page-header p {
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: 0 auto;
+    opacity: 0.9;
+}
+
+/* Skills Gap Section */
+.skills-gap-section {
+    background-color: var(--bg-light);
+    padding: 40px 0;
+}
+
+.skills-gap-container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.selected-career {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.selected-career h3 {
+    color: var(--primary-color);
+}
+
+.skills-chart-container {
+    margin-bottom: 40px;
+    background-color: white;
+    padding: 20px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+.skills-gap-details h3 {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Skills Gap List - Vertical Layout */
+.skills-gap-analysis {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.skills-gap-card {
+    background-color: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    overflow: hidden;
+    width: 100%;
+    transition: var(--transition);
+    animation: fadeInUp 0.5s ease-out forwards;
+}
+
+.skills-gap-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.skill-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background-color: var(--bg-light);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.skill-header h3 {
+    margin: 0;
+    font-size: 1.2rem;
+    color: var(--primary-color);
+}
+
+.skill-level {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.progress-container {
+    width: 150px;
+    height: 10px;
+    background-color: #e9ecef;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-bottom: 5px;
+}
+
+.progress-bar {
+    height: 100%;
+    background-color: var(--primary-color);
+}
+
+.progress-text {
+    font-size: 0.8rem;
+    color: var(--text-light);
+}
+
+.skill-details {
+    padding: 20px;
+}
+
+.recommended-resources h4 {
+    margin: 15px 0 10px;
+    font-size: 1rem;
+}
+
+.recommended-resources ul {
+    padding-left: 20px;
+}
+
+.recommended-resources li {
+    margin-bottom: 10px;
+    list-style-type: none;
+    position: relative;
+    padding-left: 5px;
+}
+
+.recommended-resources .resource-link {
+    color: var(--primary-color);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    transition: var(--transition);
+}
+
+.recommended-resources .resource-link:hover {
+    color: var(--primary-dark);
+    text-decoration: underline;
+}
+
+.recommended-resources .resource-link i {
+    margin-right: 8px;
+}
+
+/* Skills Gap Summary */
+.skills-gap-summary {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.summary-chart {
+    margin: 30px 0;
+}
+
+.summary-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.action-btn {
+    padding: 12px 24px;
+    border-radius: var(--border-radius);
+    text-decoration: none;
+    font-weight: 500;
+    text-align: center;
+    transition: var(--transition);
+}
+
+.action-btn.primary {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.action-btn.primary:hover {
+    background-color: var(--primary-dark);
+}
+
+.action-btn.secondary {
+    background-color: white;
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+}
+
+.action-btn.secondary:hover {
+    background-color: rgba(74, 108, 247, 0.05);
+}
+
+/* Animation */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .skill-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .skill-level {
+        width: 100%;
+        margin-top: 10px;
+        align-items: flex-start;
+    }
+    
+    .progress-container {
+        width: 100%;
+    }
+    
+    .summary-actions {
+        width: 100%;
+    }
+}

@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skills Gap Analysis - CareerPathAI</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="skills-gap-styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header class="header">
+        <div class="nav-container">
+            <a href="index.html" class="logo">CareerPathAI</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="explore.html">Explore</a></li>
+                <li><a href="test.html">Test</a></li>
+                <li><a href="pathways.html">Pathways</a></li>
+                <li><a href="skills-gap.html" class="active">Skills Gap</a></li>
+                <li><a href="resources.html">Resources</a></li>
+                <li class="auth-buttons">
+                    <button id="login-button" class="nav-auth-btn">Login</button>
+                    <button id="signup-button" class="nav-auth-btn">Sign Up</button>
+                    <a href="user-profile.html" id="user-profile" class="user-profile"><i class="fas fa-user-circle"></i></a>
+                </li>
+            </ul>
+        </div>
+    </header>
+    
+    <!-- Auth Modal -->
+    <div class="auth-modal" id="auth-modal">
+        <div class="auth-container">
+            <div class="auth-header">
+                <div class="auth-tabs">
+                    <button id="login-tab" class="auth-tab active" data-target="#login-form">Login</button>
+                    <button id="signup-tab" class="auth-tab" data-target="#signup-form">Sign Up</button>
+                </div>
+                <button class="close-modal" id="close-auth-modal">&times;</button>
+            </div>
+            <div class="auth-content">
+                <!-- Login Form -->
+                <form id="login-form" class="auth-form active">
+                    <h3>Welcome Back</h3>
+                    <div class="form-group">
+                        <label for="login-email">Email</label>
+                        <input type="email" id="login-email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="login-password">Password</label>
+                        <input type="password" id="login-password" name="password" required>
+                    </div>
+                    <div class="remember-me">
+                        <label>
+                            <input type="checkbox" name="remember"> Remember me
+                        </label>
+                        <a href="#" class="forgot-password">Forgot Password?</a>
+                    </div>
+                    <button type="submit" class="auth-button">Login</button>
+                    
+                    <div class="social-login">
+                        <p>Or login with</p>
+                        <div class="social-buttons">
+                            <button type="button" class="social-btn google">
+                                <i class="fab fa-google"></i> Google
+                            </button>
+                            <button type="button" class="social-btn linkedin">
+                                <i class="fab fa-linkedin-in"></i> LinkedIn
+                            </button>
+                        </div>
+                    </div>
+                </form>
+                
+                <!-- Sign Up Form -->
+                <form id="signup-form" class="auth-form">
+                    <h3>Create an Account</h3>
+                    <div class="form-group">
+                        <label for="signup-name">Full Name</label>
+                        <input type="text" id="signup-name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="signup-email">Email</label>
+                        <input type="email" id="signup-email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="signup-password">Password</label>
+                        <input type="password" id="signup-password" name="password" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="signup-confirm">Confirm Password</label>
+                        <input type="password" id="signup-confirm" name="confirm_password" required>
+                    </div>
+                    <div class="terms">
+                        <label>
+                            <input type="checkbox" name="terms" required>
+                            I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>
+                        </label>
+                    </div>
+                    <button type="submit" class="auth-button">Sign Up</button>
+                    
+                    <div class="social-login">
+                        <p>Or sign up with</p>
+                        <div class="social-buttons">
+                            <button type="button" class="social-btn google">
+                                <i class="fab fa-google"></i> Google
+                            </button>
+                            <button type="button" class="social-btn linkedin">
+                                <i class="fab fa-linkedin-in"></i> LinkedIn
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Page Header -->
+    <div class="page-header">
+        <div class="container">
+            <h1>Skills Gap Analysis</h1>
+            <p>Identify the skills you need to develop for your chosen career path</p>
+        </div>
+    </div>
+
+    <!-- Skills Gap Section -->
+    <section class="skills-gap-section">
+        <div class="container">
+            <div class="selected-career">
+                <h2>Selected Career Path: <span>Data Scientist</span></h2>
+                <p>Based on your assessment results and selected career path, we've identified the following skills you should develop:</p>
+                <div class="change-path">
+                    <a href="pathways.html" class="change-path-btn"><i class="fas fa-exchange-alt"></i> Change Career Path</a>
+                </div>
+            </div>
+            
+            <div class="skills-gap-analysis">
+                <div class="skills-gap-card">
+                    <div class="skill-header">
+                        <h3>Machine Learning</h3>
+                        <div class="skill-level">
+                            <div class="progress-container">
+                                <div class="progress-bar" style="width: 35%;"></div>
+                            </div>
+                            <span class="progress-text">35% Proficiency</span>
+                        </div>
+                    </div>
+                    <div class="skill-details">
+                        <p>Machine learning is a core skill for data scientists. You need to strengthen your knowledge of algorithms, model training, and evaluation techniques.</p>
+                        <div class="recommended-resources">
+                            <h4>Recommended Resources:</h4>
+                            <ul>
+                                <li>
+                                    <a href="resources.html#course1" class="resource-link">
+                                        <i class="fas fa-graduation-cap"></i> Machine Learning A-Z™: Hands-On Python & R
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="resources.html#cert1" class="resource-link">
+                                        <i class="fas fa-certificate"></i> TensorFlow Developer Certificate
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="resources.html#book1" class="resource-link">
+                                        <i class="fas fa-book"></i> Hands-On Machine Learning with Scikit-Learn & TensorFlow
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="skills-gap-card">
+                    <div class="skill-header">
+                        <h3>Statistical Analysis</h3>
+                        <div class="skill-level">
+                            <div class="progress-container">
+                                <div class="progress-bar" style="width: 60%;"></div>
+                            </div>
+                            <span class="progress-text">60% Proficiency</span>
+                        </div>
+                    </div>
+                    <div class="skill-details">
+                        <p>You have a good foundation in statistics, but need to deepen your knowledge of advanced statistical methods and hypothesis testing for data science applications.</p>
+                        <div class="recommended-resources">
+                            <h4>Recommended Resources:</h4>
+                            <ul>
+                                <li>
+                                    <a href="resources.html#course2" class="resource-link">
+                                        <i class="fas fa-graduation-cap"></i> Statistics for Data Science and Business Analysis
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="resources.html#book2" class="resource-link">
+                                        <i class="fas fa-book"></i> Practical Statistics for Data Scientists
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="skills-gap-card">
+                    <div class="skill-header">
+                        <h3>SQL & Database Management</h3>
+                        <div class="skill-level">
+                            <div class="progress-container">
+                                <div class="progress-bar" style="width: 45%;"></div>
+                            </div>
+                            <span class="progress-text">45% Proficiency</span>
+                        </div>
+                    </div>
+                    <div class="skill-details">
+                        <p>Data scientists need strong SQL skills to query and manipulate large datasets. Focus on advanced queries, database design, and optimization techniques.</p>
+                        <div class="recommended-resources">
+                            <h4>Recommended Resources:</h4>
+                            <ul>
+                                <li>
+                                    <a href="resources.html#course3" class="resource-link">
+                                        <i class="fas fa-graduation-cap"></i> The Complete SQL Bootcamp
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="resources.html#cert2" class="resource-link">
+                                        <i class="fas fa-certificate"></i> Microsoft Certified: Azure Data Fundamentals
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="skills-gap-card">
+                    <div class="skill-header">
+                        <h3>Data Visualization</h3>
+                        <div class="skill-level">
+                            <div class="progress-container">
+                                <div class="progress-bar" style="width: 70%;"></div>
+                            </div>
+                            <span class="progress-text">70% Proficiency</span>
+                        </div>
+                    </div>
+                    <div class="skill-details">
+                        <p>You have good visualization skills, but could benefit from learning more advanced techniques and tools like Tableau and D3.js for creating interactive dashboards.</p>
+                        <div class="recommended-resources">
+                            <h4>Recommended Resources:</h4>
+                            <ul>
+                                <li>
+                                    <a href="resources.html#course4" class="resource-link">
+                                        <i class="fas fa-graduation-cap"></i> Tableau 2022 A-Z: Hands-On Tableau Training
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="resources.html#mentor1" class="resource-link">
+                                        <i class="fas fa-user-friends"></i> Connect with a Data Visualization Expert
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="skills-gap-card">
+                    <div class="skill-header">
+                        <h3>Big Data Technologies</h3>
+                        <div class="skill-level">
+                            <div class="progress-container">
+                                <div class="progress-bar" style="width: 20%;"></div>
+                            </div>
+                            <span class="progress-text">20% Proficiency</span>
+                        </div>
+                    </div>
+                    <div class="skill-details">
+                        <p>As a data scientist, you'll need to work with large datasets. Learning technologies like Hadoop, Spark, and cloud-based data solutions will be essential.</p>
+                        <div class="recommended-resources">
+                            <h4>Recommended Resources:</h4>
+                            <ul>
+                                <li>
+                                    <a href="resources.html#course5" class="resource-link">
+                                        <i class="fas fa-graduation-cap"></i> Apache Spark with Scala - Hands On with Big Data
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="resources.html#cert3" class="resource-link">
+                                        <i class="fas fa-certificate"></i> Google Cloud Professional Data Engineer
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="resources.html#community1" class="resource-link">
+                                        <i class="fas fa-users"></i> Join Big Data Developers Community
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="skills-gap-summary">
+                <h3>Your Skills Gap Summary</h3>
+                <div class="summary-chart">
+                    <!-- Placeholder for a radar chart or other visualization -->
+                    <div class="chart-placeholder">
+                        <div style="width: 600px; height: 300px; background-color: #f0f0f0; display: flex; justify-content: center; align-items: center; border: 1px solid #ddd; border-radius: 4px;">
+                            <span style="color: #666; font-size: 18px;">Skills Gap Chart Visualization</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="summary-actions">
+                    <a href="resources.html" class="action-btn primary">View All Recommended Resources</a>
+                    <a href="#" class="action-btn secondary">Download Skills Gap Report</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section about">
+                <h4>About CareerPathAI</h4>
+                <p>CareerPathAI is an AI-powered career guidance platform that helps students and professionals discover personalized career pathways based on their unique profile.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-section links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="explore.html">Explore</a></li>
+                    <li><a href="test.html">Test</a></li>
+                    <li><a href="pathways.html">Career Pathways</a></li>
+                    <li><a href="skills-gap.html">Skills Gap</a></li>
+                    <li><a href="resources.html">Resources</a></li>
+                    <li><a href="#">FAQ</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section contact">
+                <h4>Contact Us</h4>
+                <p><i class="fas fa-map-marker-alt"></i> 123 Innovation Drive, Tech City, TC 12345</p>
+                <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
+                <p><i class="fas fa-envelope"></i> info@careerpathAI.com</p>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2023 CareerPathAI. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

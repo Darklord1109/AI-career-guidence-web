@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile - CareerPathAI</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="user-profile-styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header class="header">
+        <div class="nav-container">
+            <a href="index.html" class="logo">CareerPathAI</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="explore.html">Explore</a></li>
+                <li><a href="test.html">Test</a></li>
+                <li><a href="pathways.html">Pathways</a></li>
+                <li><a href="skills-gap.html">Skills Gap</a></li>
+                <li><a href="resources.html">Resources</a></li>
+                <li class="auth-buttons">
+                    <a href="user-profile.html" id="user-profile" class="user-profile active"><i class="fas fa-user-circle"></i></a>
+                </li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <div class="page-header">
+        <div class="container">
+            <h1>User Profile</h1>
+            <p>Manage your account, view your assessment results, and track your progress</p>
+        </div>
+    </div>
+
+    <!-- User Profile Section -->
+    <section class="profile-section">
+        <div class="container">
+            <div class="profile-layout">
+                <!-- Sidebar -->
+                <div class="profile-sidebar">
+                    <div class="user-info">
+                        <div class="user-avatar">
+                            <div style="width: 120px; height: 120px; background-color: #f0f0f0; display: flex; justify-content: center; align-items: center; border: 1px solid #ddd; border-radius: 50%;">
+                                <span style="color: #666; font-size: 16px;">User</span>
+                            </div>
+                            <button class="edit-avatar"><i class="fas fa-camera"></i></button>
+                        </div>
+                        <h3 class="user-name">John Doe</h3>
+                        <p class="user-email">john.doe@example.com</p>
+                        <p class="user-since">Member since: January 2023</p>
+                    </div>
+                    
+                    <nav class="profile-nav">
+                        <ul>
+                            <li class="active"><a href="#dashboard"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+                            <li><a href="#assessment-results"><i class="fas fa-clipboard-check"></i> Assessment Results</a></li>
+                            <li><a href="#saved-pathways"><i class="fas fa-bookmark"></i> Saved Pathways</a></li>
+                            <li><a href="#learning-progress"><i class="fas fa-chart-line"></i> Learning Progress</a></li>
+                            <li><a href="#account-settings"><i class="fas fa-cog"></i> Account Settings</a></li>
+                            <li><a href="#" id="logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                
+                <!-- Main Content -->
+                <div class="profile-content">
+                    <!-- Dashboard Tab -->
+                    <div id="dashboard" class="profile-tab active">
+                        <h2>Dashboard</h2>
+                        
+                        <div class="dashboard-summary">
+                            <div class="summary-card">
+                                <div class="summary-icon"><i class="fas fa-clipboard-check"></i></div>
+                                <div class="summary-info">
+                                    <h4>Assessment Completion</h4>
+                                    <div class="progress-container">
+                                        <div class="progress-bar" style="width: 100%;"></div>
+                                    </div>
+                                    <p>Completed on: March 15, 2023</p>
+                                </div>
+                            </div>
+                            
+                            <div class="summary-card">
+                                <div class="summary-icon"><i class="fas fa-graduation-cap"></i></div>
+                                <div class="summary-info">
+                                    <h4>Learning Progress</h4>
+                                    <div class="progress-container">
+                                        <div class="progress-bar" style="width: 45%;"></div>
+                                    </div>
+                                    <p>3 of 7 recommended courses completed</p>
+                                </div>
+                            </div>
+                            
+                            <div class="summary-card">
+                                <div class="summary-icon"><i class="fas fa-bookmark"></i></div>
+                                <div class="summary-info">
+                                    <h4>Saved Pathways</h4>
+                                    <p>4 career paths saved</p>
+                                    <a href="#saved-pathways" class="view-link">View All</a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="recommended-section">
+                            <h3>Recommended Next Steps</h3>
+                            <div class="recommendation-cards">
+                                <div class="recommendation-card">
+                                    <div class="recommendation-icon"><i class="fas fa-laptop-code"></i></div>
+                                    <div class="recommendation-content">
+                                        <h4>Complete SQL Course</h4>
+                                        <p>Strengthen your database skills with The Complete SQL Bootcamp</p>
+                                        <a href="resources.html#course3" class="action-btn">Start Learning</a>
+                                    </div>
+                                </div>
+                                
+                                <div class="recommendation-card">
+                                    <div class="recommendation-icon"><i class="fas fa-certificate"></i></div>
+                                    <div class="recommendation-content">
+                                        <h4>Get TensorFlow Certification</h4>
+                                        <p>Validate your machine learning skills with Google's TensorFlow Developer Certificate</p>
+                                        <a href="resources.html#cert1" class="action-btn">Learn More</a>
+                                    </div>
+                                </div>
+                                
+                                <div class="recommendation-card">
+                                    <div class="recommendation-icon"><i class="fas fa-user-friends"></i></div>
+                                    <div class="recommendation-content">
+                                        <h4>Connect with a Mentor</h4>
+                                        <p>Accelerate your learning with guidance from a data visualization expert</p>
+                                        <a href="resources.html#mentor1" class="action-btn">Find Mentor</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Assessment Results Tab -->
+                    <div id="assessment-results" class="profile-tab">
+                        <h2>Assessment Results</h2>
+                        
+                        <div class="assessment-summary">
+                            <div class="summary-header">
+                                <h3>Your Assessment Profile</h3>
+                                <a href="test.html" class="retake-btn"><i class="fas fa-redo"></i> Retake Test</a>
+                            </div>
+                            
+                            <div class="assessment-charts">
+                                <div class="chart-container">
+                                    <h4>Aptitude Results</h4>
+                                    <div class="chart-placeholder">
+                                        <div style="width: 400px; height: 250px; background-color: #f0f0f0; display: flex; justify-content: center; align-items: center; border: 1px solid #ddd; border-radius: 4px;">
+                                            <span style="color: #666; font-size: 18px;">Aptitude Chart Visualization</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="chart-container">
+                                    <h4>Interest Areas</h4>
+                                    <div class="chart-placeholder">
+                                        <div style="width: 400px; height: 250px; background-color: #f0f0f0; display: flex; justify-content: center; align-items: center; border: 1px solid #ddd; border-radius: 4px;">
+                                            <span style="color: #666; font-size: 18px;">Interests Chart Visualization</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="assessment-details">
+                                <h4>Detailed Results</h4>
+                                
+                                <div class="result-category">
+                                    <h5>Cognitive Strengths</h5>
+                                    <ul class="strength-list">
+                                        <li>
+                                            <span class="strength-name">Analytical Thinking</span>
+                                            <div class="strength-bar">
+                                                <div class="strength-level" style="width: 85%;"></div>
+                                            </div>
+                                            <span class="strength-score">85%</span>
+                                        </li>
+                                        <li>
+                                            <span class="strength-name">Problem Solving</span>
+                                            <div class="strength-bar">
+                                                <div class="strength-level" style="width: 92%;"></div>
+                                            </div>
+                                            <span class="strength-score">92%</span>
+                                        </li>
+                                        <li>
+                                            <span class="strength-name">Numerical Reasoning</span>
+                                            <div class="strength-bar">
+                                                <div class="strength-level" style="width: 78%;"></div>
+                                            </div>
+                                            <span class="strength-score">78%</span>
+                                        </li>
+                                        <li>
+                                            <span class="strength-name">Pattern Recognition</span>
+                                            <div class="strength-bar">
+                                                <div class="strength-level" style="width: 88%;"></div>
+                                            </div>
+                                            <span class="strength-score">88%</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="result-category">
+                                    <h5>Interest Areas</h5>
+                                    <ul class="interest-list">
+                                        <li>
+                                            <span class="interest-name">Technology & Computing</span>
+                                            <div class="interest-bar">
+                                                <div class="interest-level" style="width: 95%;"></div>
+                                            </div>
+                                            <span class="interest-score">High</span>
+                                        </li>
+                                        <li>
+                                            <span class="interest-name">Data Analysis</span>
+                                            <div class="interest-bar">
+                                                <div class="interest-level" style="width: 90%;"></div>
+                                            </div>
+                                            <span class="interest-score">High</span>
+                                        </li>
+                                        <li>
+                                            <span class="interest-name">Research & Development</span>
+                                            <div class="interest-bar">
+                                                <div class="interest-level" style="width: 75%;"></div>
+                                            </div>
+                                            <span class="interest-score">Medium</span>
+                                        </li>
+                                        <li>
+                                            <span class="interest-name">Business & Finance</span>
+                                            <div class="interest-bar">
+                                                <div class="interest-level" style="width: 60%;"></div>
+                                            </div>
+                                            <span class="interest-score">Medium</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="result-category">
+                                    <h5>Work Values</h5>
+                                    <div class="values-tags">
+                                        <span class="value-tag primary">Problem Solving</span>
+                                        <span class="value-tag primary">Innovation</span>
+                                        <span class="value-tag primary">Continuous Learning</span>
+                                        <span class="value-tag secondary">Work-Life Balance</span>
+                                        <span class="value-tag secondary">Recognition</span>
+                                        <span class="value-tag secondary">Collaboration</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Saved Pathways Tab -->
+                    <div id="saved-pathways" class="profile-tab">
+                        <h2>Saved Career Pathways</h2>
+                        
+                        <div class="saved-paths-list">
+                            <!-- Saved Path 1 -->
+                            <div class="saved-path-card">
+                                <div class="path-header">
+                                    <h3>Data Scientist</h3>
+                                    <div class="path-actions">
+                                        <button class="compare-btn"><i class="fas fa-exchange-alt"></i></button>
+                                        <button class="remove-btn"><i class="far fa-trash-alt"></i></button>
+                                    </div>
+                                </div>
+                                
+                                <div class="path-details">
+                                    <div class="match-indicator">
+                                        <div class="match-circle">
+                                            <span class="match-percentage">95%</span>
+                                        </div>
+                                        <span class="match-label">Match</span>
+                                    </div>
+                                    
+                                    <div class="path-info">
+                                        <div class="path-meta">
+                                            <span class="industry"><i class="fas fa-building"></i> Technology</span>
+                                            <span class="salary"><i class="fas fa-money-bill-wave"></i> $95,000 - $145,000</span>
+                                            <span class="growth high"><i class="fas fa-chart-line"></i> High Growth</span>
+                                        </div>
+                                        
+                                        <div class="key-skills">
+                                            <h4>Key Skills</h4>
+                                            <div class="skill-tags">
+                                                <span class="skill-tag">Python</span>
+                                                <span class="skill-tag">Machine Learning</span>
+                                                <span class="skill-tag">SQL</span>
+                                                <span class="skill-tag">Data Visualization</span>
+                                                <span class="skill-tag">Statistics</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="path-actions-footer">
+                                    <a href="pathways.html" class="view-details-btn">View Details</a>
+                                    <a href="skills-gap.html" class="view-gap-btn">View Skills Gap</a>
+                                </div>
+                            </div>
+                            
+                            <!-- Saved Path 2 -->
+                            <div class="saved-path-card">
+                                <div class="path-header">
+                                    <h3>Machine Learning Engineer</h3>
+                                    <div class="path-actions">
+                                        <button class="compare-btn"><i class="fas fa-exchange-alt"></i></button>
+                                        <button class="remove-btn"><i class="far fa-trash-alt"></i></button>
+                                    </div>
+                                </div>
+                                
+                                <div class="path-details">
+                                    <div class="match-indicator">
+                                        <div class="match-circle">
+                                            <span class="match-percentage">88%</span>
+                                        </div>
+                                        <span class="match-label">Match</span>
+                                    </div>
+                                    
+                                    <div class="path-info">
+                                        <div class="path-meta">
+                                            <span class="industry"><i class="fas fa-building"></i> Technology</span>
+                                            <span class="salary"><i class="fas fa-money-bill-wave"></i> $110,000 - $160,000</span>
+                                            <span class="growth high"><i class="fas fa-chart-line"></i> High Growth</span>
+                                        </div>
+                                        
+                                        <div class="key-skills">
+                                            <h4>Key Skills</h4>
+                                            <div class="skill-tags">
+                                                <span class="skill-tag">Python</span>
+                                                <span class="skill-tag">TensorFlow</span>
+                                                <span class="skill-tag">Deep Learning</span>
+                                                <span class="skill-tag">Computer Vision</span>
+                                                <span class="skill-tag">NLP</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="path-actions-footer">
+                                    <a href="pathways.html" class="view-details-btn">View Details</a>
+                                    <a href="skills-gap.html" class="view-gap-btn">View Skills Gap</a>
+                                </div>
+                            </div>
+                            
+                            <!-- Saved Path 3 -->
+                            <div class="saved-path-card">
+                                <div class="path-header">
+                                    <h3>Data Engineer</h3>
+                                    <div class="path-actions">
+                                        <button class="compare-btn"><i class="fas fa-exchange-alt"></i></button>
+                                        <button class="remove-btn"><i class="far fa-trash-alt"></i></button>
+                                    </div>
+                                </div>
+                                
+                                <div class="path-details">
+                                    <div class="match-indicator">
+                                        <div class="match-circle">
+                                            <span class="match-percentage">82%</span>
+                                        </div>
+                                        <span class="match-label">Match</span>
+                                    </div>
+                                    
+                                    <div class="path-info">
+                                        <div class="path-meta">
+                                            <span class="industry"><i class="fas fa-building"></i> Technology</span>
+                                            <span class="salary"><i class="fas fa-money-bill-wave"></i> $90,000 - $140,000</span>
+                                            <span class="growth medium"><i class="fas fa-chart-line"></i> Medium Growth</span>
+                                        </div>
+                                        
+                                        <div class="key-skills">
+                                            <h4>Key Skills</h4>
+                                            <div class="skill-tags">
+                                                <span class="skill-tag">SQL</span>
+                                                <span class="skill-tag">Python</span>
+                                                <span class="skill-tag">Hadoop</span>
+                                                <span class="skill-tag">Spark</span>
+                                                <span class="skill-tag">ETL</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="path-actions-footer">
+                                    <a href="pathways.html" class="view-details-btn">View Details</a>
+                                    <a href="skills-gap.html" class="view-gap-btn">View Skills Gap</a>
+                                </div>
+                            </div>
+                            
+                            <!-- Saved Path 4 -->
+                            <div class="saved-path-card">
+                                <div class="path-header">
+                                    <h3>AI Research Scientist</h3>
+                                    <div class="path-actions">
+                                        <button class="compare-btn"><i class="fas fa-exchange-alt"></i></button>
+                                        <button class="remove-btn"><i class="far fa-trash-alt"></i></button>
+                                    </div>
+                                </div>
+                                
+                                <div class="path-details">
+                                    <div class="match-indicator">
+                                        <div class="match-circle">
+                                            <span class="match-percentage">78%</span>
+                                        </div>
+                                        <span class="match-label">Match</span>
+                                    </div>
+                                    
+                                    <div class="path-info">
+                                        <div class="path-meta">
+                                            <span class="industry"><i class="fas fa-building"></i> Technology</span>
+                                            <span class="salary"><i class="fas fa-money-bill-wave"></i> $120,000 - $180,000</span>
+                                            <span class="growth high"><i class="fas fa-chart-line"></i> High Growth</span>
+                                        </div>
+                                        
+                                        <div class="key-skills">
+                                            <h4>Key Skills</h4>
+                                            <div class="skill-tags">
+                                                <span class="skill-tag">Deep Learning</span>
+                                                <span class="skill-tag">Research</span>
+                                                <span class="skill-tag">Python</span>
+                                                <span class="skill-tag">Mathematics</span>
+                                                <span class="skill-tag">Publications</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="path-actions-footer">
+                                    <a href="pathways.html" class="view-details-btn">View Details</a>
+                                    <a href="skills-gap.html" class="view-gap-btn">View Skills Gap</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Learning Progress Tab -->
+                    <div id="learning-progress" class="profile-tab">
+                        <h2>Learning Progress</h2>
+                        
+                        <div class="progress-overview">
+                            <div class="progress-stats">
+                                <div class="stat-card">
+                                    <div class="stat-value">3</div>
+                                    <div class="stat-label">Courses Completed</div>
+                                </div>
+                                
+                                <div class="stat-card">
+                                    <div class="stat-value">4</div>
+                                    <div class="stat-label">Courses In Progress</div>
+                                </div>
+                                
+                                <div class="stat-card">
+                                    <div class="stat-value">45%</div>
+                                    <div class="stat-label">Overall Progress</div>
+                                </div>
+                                
+                                <div class="stat-card">
+                                    <div class="stat-value">12</div>
+                                    <div class="stat-label">Hours This Week</div>
+                                </div>
+                            </div>
+                            
+                            <div class="skill-progress">
+                                <h3>Skills Development</h3>
+                                
+                                <div class="skill-progress-item">
+                                    <div class="skill-info">
+                                        <span class="skill-name">Machine Learning</span>
+                                        <span class="skill-percentage">35%</span>
+                                    </div>
+                                    <div class="progress-container">
+                                        <div class="progress-bar" style="width: 35%;"></div>
+                                    </div>
+                                </div>
+                                
+                                <div class="skill-progress-item">
+                                    <div class="skill-info">
+                                        <span class="skill-name">Statistical Analysis</span>
+                                        <span class="skill-percentage">60%</span>
+                                    </div>
+                                    <div class="progress-container">
+                                        <div class="progress-bar" style="width: 60%;"></div>
+                                    </div>
+                                </div>
+                                
+                                <div class="skill-progress-item">
+                                    <div class="skill-info">
+                                        <span class="skill-name">SQL & Database Management</span>
+                                        <span class="skill-percentage">45%</span>
+                                    </div>
+                                    <div class="progress-container">
+                                        <div class="progress-bar" style="width: 45%;"></div>
+                                    </div>
+                                </div>
+                                
+                                <div class="skill-progress-item">
+                                    <div class="skill-info">
+                                        <span class="skill-name">Data Visualization</span>
+                                        <span class="skill-percentage">70%</span>
+                                    </div>
+                                    <div class="progress-container">
+                                        <div class="progress-bar" style="width: 70%;"></div>
+                                    </div>
+                                </div>
+                                
+                                <div class="skill-progress-item">
+                                    <div class="skill-info">
+                                        <span class="skill-name">Big Data Technologies</span>
+                                        <span class="skill-percentage">20%</span>
+                                    </div>
+                                    <div class="progress-container">
+                                        <div class="progress-bar" style="width: 20%;"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="learning-activities">
+                            <h3>Recent Learning Activities</h3>
+                            
+                            <div class="activity-list">
+                                <div class="activity-item">
+                                    <div class="activity-icon completed"><i class="fas fa-check-circle"></i></div>
+                                    <div class="activity-details">
+                                        <h4>Completed: Python for Data Science and Machine Learning</h4>
+                                        <p class="activity-meta">Completed on: April 10, 2023 | 10 hours</p>
+                                        <div class="activity-skills">
+                                            <span class="skill-tag">Python</span>
+                                            <span class="skill-tag">NumPy</span>
+                                            <span class="skill-tag">Pandas</span>
+                                        </div>
+                                    </div>
+                                    <div class="activity-actions">
+                                        <a href="#" class="view-certificate">View Certificate</a>
+                                    </div>
+                                </div>
+                                
+                                <div class="activity-item">
+                                    <div class="activity-icon in-progress"><i class="fas fa-spinner"></i></div>
+                                    <div class="activity-details">
+                                        <h4>In Progress: The Complete SQL Bootcamp</h4>
+                                        <p class="activity-meta">Progress: 45% | Last activity: May 2, 2023</p>
+                                        <div class="activity-skills">
+                                            <span class="skill-tag">SQL</span>
+                                            <span class="skill-tag">PostgreSQL</span>
+                                            <span class="skill-tag">Database</span>
+                                        </div>
+                                    </div>
+                                    <div class="activity-actions">
+                                        <a href="resources.html#course3" class="continue-btn">Continue Learning</a>
+                                    </div>
+                                </div>
+                                
+                                <div class="activity-item">
+                                    <div class="activity-icon completed"><i class="fas fa-check-circle"></i></div>
+                                    <div class="activity-details">
+                                        <h4>Completed: Statistics for Data Science and Business Analysis</h4>
+                                        <p class="activity-meta">Completed on: March 25, 2023 | 15 hours</p>
+                                        <div class="activity-skills">
+                                            <span class="skill-tag">Statistics</span>
+                                            <span class="skill-tag">Data Analysis</span>
+                                            <span class="skill-tag">Excel</span>
+                                        </div>
+                                    </div>
+                                    <div class="activity-actions">
+                                        <a href="#" class="view-certificate">View Certificate</a>
+                                    </div>
+                                </div>
+                                
+                                <div class="activity-item">
+                                    <div class="activity-icon in-progress"><i class="fas fa-spinner"></i></div>
+                                    <div class="activity-details">
+                                        <h4>In Progress: Tableau 2022 A-Z: Hands-On Tableau Training</h4>
+                                        <p class="activity-meta">Progress: 30% | Last activity: May 5, 2023</p>
+                                        <div class="activity-skills">
+                                            <span class="skill-tag">Tableau</span>
+                                            <span class="skill-tag">Data Visualization</span>
+                                            <span class="skill-tag">Business Intelligence</span>
+                                        </div>
+                                    </div>
+                                    <div class="activity-actions">
+                                        <a href="resources.html#course4" class="continue-btn">Continue Learning</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Account Settings Tab -->
+                    <div id="account-settings" class="profile-tab">
+                        <h2>Account Settings</h2>
+                        
+                        <div class="settings-sections">
+                            <!-- Personal Information -->
+                            <div class="settings-section">
+                                <h3>Personal Information</h3>
+                                <form class="settings-form">
+                                    <div class="form-row">
+                                        <div class="form-group">
+                                            <label for="settings-name">Full Name</label>
+                                            <input type="text" id="settings-name" value="John Doe">
+                                        </div>
+                                        
+                                        <div class="form-group">
+                                            <label for="settings-email">Email Address</label>
+                                            <input type="email" id="settings-email" value="john.doe@example.com">
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="form-row">
+                                        <div class="form-group">
+                                            <label for="settings-phone">Phone Number</label>
+                                            <input type="tel" id="settings-phone" value="(555) 123-4567">
+                                        </div>
+                                        
+                                        <div class="form-group">
+                                            <label for="settings-location">Location</label>
+                                            <input type="text" id="settings-location" value="New York, NY">
+                                        </div>
+                                    </div>
+                                    
+                                    <button type="submit" class="save-btn">Save Changes</button>
+                                </form>
+                            </div>
+                            
+                            <!-- Password & Security -->
+                            <div class="settings-section">
+                                <h3>Password & Security</h3>
+                                <form class="settings-form">
+                                    <div class="form-row">
+                                        <div class="form-group">
+                                            <label for="current-password">Current Password</label>
+                                            <input type="password" id="current-password">
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="form-row">
+                                        <div class="form-group">
+                                            <label for="new-password">New Password</label>
+                                            <input type="password" id="new-password">
+                                        </div>
+                                        
+                                        <div class="form-group">
+                                            <label for="confirm-password">Confirm New Password</label>
+                                            <input type="password" id="confirm-password">
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label class="checkbox-label">
+                                            <input type="checkbox" id="two-factor">
+                                            <span>Enable Two-Factor Authentication</span>
+                                        </label>
+                                    </div>
+                                    
+                                    <button type="submit" class="save-btn">Update Password</button>
+                                </form>
+                            </div>
+                            
+                            <!-- Notification Preferences -->
+                            <div class="settings-section">
+                                <h3>Notification Preferences</h3>
+                                <form class="settings-form">
+                                    <div class="form-group">
+                                        <label class="checkbox-label">
+                                            <input type="checkbox" id="email-updates" checked>
+                                            <span>Email Updates</span>
+                                        </label>
+                                        <p class="setting-description">Receive updates about your account, new features, and platform changes</p>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label class="checkbox-label">
+                                            <input type="checkbox" id="course-reminders" checked>
+                                            <span>Course Reminders</span>
+                                        </label>
+                                        <p class="setting-description">Receive reminders about courses you've started but haven't completed</p>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label class="checkbox-label">
+                                            <input type="checkbox" id="career-opportunities" checked>
+                                            <span>Career Opportunities</span>
+                                        </label>
+                                        <p class="setting-description">Receive notifications about job opportunities that match your profile</p>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label class="checkbox-label">
+                                            <input type="checkbox" id="resource-recommendations">
+                                            <span>Resource Recommendations</span>
+                                        </label>
+                                        <p class="setting-description">Receive recommendations for courses, certifications, and other learning resources</p>
+                                    </div>
+                                    
+                                    <button type="submit" class="save-btn">Save Preferences</button>
+                                </form>
+                            </div>
+                            
+                            <!-- Account Management -->
+                            <div class="settings-section">
+                                <h3>Account Management</h3>
+                                <div class="account-actions">
+                                    <button class="download-data-btn">Download My Data</button>
+                                    <button class="delete-account-btn">Delete Account</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section about">
+                <h4>About CareerPathAI</h4>
+                <p>CareerPathAI is an AI-powered career guidance platform that helps students and professionals discover personalized career pathways based on their unique profile.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-section links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="explore.html">Explore</a></li>
+                    <li><a href="test.html">Test</a></li>
+                    <li><a href="pathways.html">Career Pathways</a></li>
+                    <li><a href="skills-gap.html">Skills Gap</a></li>
+                    <li><a href="resources.html">Resources</a></li>
+                    <li><a href="#">FAQ</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section contact">
+                <h4>Contact Us</h4>
+                <p><i class="fas fa-map-marker-alt"></i> 123 Innovation Drive, Tech City, TC 12345</p>
+                <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
+                <p><i class="fas fa-envelope"></i> info@careerpathAI.com</p>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2023 CareerPathAI. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
