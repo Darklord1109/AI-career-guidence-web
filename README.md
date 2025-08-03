@@ -1,1 +1,0 @@
-# AI-career-guidence-web
